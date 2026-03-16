@@ -9,14 +9,8 @@ app.use(express.urlencoded({ extended: true }));
 
 
 //MÉTODOS GET, POST, PUT, DELETE, PATCH
-
-app.get('/', (req, res) => {
-    res.json({
-        ok: true,
-        message: 'Servidor listo!!!',
-        code: 200
-    })
-})
+import indexRouter from "./routes/index.routes.js";
+app.use('/', indexRouter);
 
 
 app.use((err, req, res, next) => {
